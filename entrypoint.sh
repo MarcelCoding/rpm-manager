@@ -9,7 +9,7 @@ rm -rf "${REPO}/all/x86_64/pool"
 mkdir -p "${REPO}/all/x86_64/pool"
 find ${POOL} -iname "*.rpm" -type f -exec bash -c "mkdir -p \`dirname ${REPO}/all/x86_64{}\` && cp {} ${REPO}/all/x86_64{}" \;
 
-find ./repo -iname "*.rpm" -type f -exec rpm --addsign {} \;
+find ${REPO} -iname "*.rpm" -type f -exec rpm --addsign {} \;
 
 cd "${REPO}"
 
